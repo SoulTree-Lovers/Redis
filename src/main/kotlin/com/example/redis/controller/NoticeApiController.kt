@@ -19,8 +19,9 @@ class NoticeApiController (
     fun getNotice(
         @RequestParam notice: String?
     ): String? {
+        log.info("notice controller get notice: {}", notice)
         val response = noticeService.getNotice(notice)
-        log.info("notice controller get notice: {}, response: {}", notice, response)
+        log.info("notice controller get response: {}", response)
         return response
     }
 
@@ -28,8 +29,9 @@ class NoticeApiController (
     fun addNotice(
         @RequestParam notice: String?
     ): String? {
+        log.info("notice controller add notice: {}", notice)
         val response = noticeService.addNotice(notice)
-        log.info("notice controller add notice: {}, response: {}", notice, response)
+        log.info("notice controller add response: {}", response)
         return response
     }
 
